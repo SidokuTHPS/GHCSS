@@ -1,0 +1,331 @@
+/*BEGIN Guitar Hero 5 Controller Styling*/
+/*This class defines the base attributes of the skin*/
+
+:root {
+  --dpad-top: 552px;
+  --dpad-left: 2360px;
+  --base-disconnected: url(./base-disconnect.png);
+  --base: url(./base.png);
+  --player-id: url(./player-n.png);
+  --menus: url(./menus.png);
+  --stick: url(./stick.svg);
+  --face-buttons: url(./face-buttons.png);
+  --dpad: url(./dpad.png);
+}
+
+body {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.5);
+}
+
+@media screen and (min-width: 1921px) {
+  .container {
+    transform: scale(1.05);
+  }
+}
+
+.controller.custom {
+  width: 3537px;
+  height: 1165px;
+  background-repeat: no-repeat;
+  background-size: 3537px 1165px;
+}
+
+.custom.active {
+  background-image: var(--base);
+}
+.custom.disconnected {
+  background-image: var(--base-disconnected);
+}
+
+.custom.disconnected > div {
+  display: none;
+}
+
+.custom .quadrant {
+  position: absolute;
+  background: var(--player-id);
+  height: 17px;
+  width: 111px;
+  top: 280px !important;
+  left: 3145px !important;
+  transform: scale(1, 1) rotate(90deg) !important;
+}
+
+.custom .p0 {
+  background-position: 0 -6px;
+}
+.custom .p1 {
+  background-position: 0 -28px;
+}
+.custom .p2 {
+  background-position: 0 -49px;
+}
+.custom .p3 {
+  background-position: 0 -70px;
+}
+
+.custom .arrows {
+  position: absolute;
+  width: 205px;
+  height: 19px;
+  top: 398px !important;
+  left: 2950px !important;
+}
+
+.custom .back,
+.custom .start {
+  background: var(--menus);
+  width: 147px;
+  height: 375px;
+}
+.custom .back.pressed,
+.custom .start.pressed {
+  background-position-y: -375px;
+}
+.custom .back {
+  float: right;
+  width: 67px;
+  position: absolute;
+  background-position: 67px 0;
+  top: 0;
+  left: 0;
+}
+.custom .start {
+  float: left;
+  width: 80px;
+  position: absolute;
+  background-position: 0 0;
+  top: 0;
+  left: 0;
+}
+
+.custom .abxy {
+  position: absolute;
+  width: 450px;
+  height: 256px;
+  top: 542px !important;
+  left: 860px !important;
+}
+
+.custom .button,
+.custom .bumper.left {
+  position: absolute;
+  width: 90px;
+  height: 128px;
+  background: var(--face-buttons);
+}
+
+.custom .bumper.right.pressed {
+  background-position: 473px 0 !important;
+  z-index: 100;
+}
+
+.custom .bumper.right.pressed::after {
+  content: "";
+  width: 100%;
+  height: 12px;
+  background-color: white;
+  display: block;
+}
+
+.custom .bumper.right {
+  background: var(--dpad);
+  position: absolute;
+  width: 473px;
+  height: 83px;
+  top: var(--dpad-top) !important;
+  left: var(--dpad-left) !important;
+}
+
+.trigger-button.left.pressed {
+  background: var(--dpad);
+  background-position: 946px 0 !important;
+  position: absolute;
+  width: 473px;
+  height: 83px;
+  top: var(--dpad-top) !important;
+  left: var(--dpad-left) !important;
+  z-index: 100;
+}
+.trigger-button.left.pressed::after {
+  content: "";
+  width: 100%;
+  height: 12px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+.custom .button.pressed,
+.custom .bumper.left.pressed {
+  background-position-y: -128px;
+}
+
+.controller .fstick {
+  position: absolute;
+  display: none;
+  top: 270px;
+  left: 2810px;
+  background-color: black;
+  border-radius: 5rem;
+  width: 48px;
+  height: 48px;
+}
+
+.fstick.up {
+  display: block;
+}
+
+.custom .a {
+  background-position: 0 0;
+  left: -180px !important;
+}
+.custom .b {
+  background-position: 360px 0;
+  left: -80px !important;
+}
+.custom .x {
+  background-position: 270px 0;
+  left: 20px !important;
+}
+.custom .y {
+  background-position: 180px 0;
+  left: 130px !important;
+}
+.custom .bumper.left {
+  background-position: 90px 0;
+  top: 543px !important;
+  left: 1100px !important;
+}
+
+.custom .dpad {
+  width: 80px;
+  height: 80px;
+  left: 2700px;
+  top: 255px;
+  position: absolute;
+}
+
+.custom .dpad .pressed {
+  background-color: black;
+  display: none;
+}
+
+.custom .dpad .face {
+  position: absolute;
+}
+
+.custom .dpad .up.pressed,
+.custom .dpad .down.pressed {
+  width: 30px;
+  height: 30px;
+  left: calc(50% - 15px);
+}
+.custom .dpad .left.pressed,
+.custom .dpad .right.pressed {
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+}
+
+.custom .dpad .up.pressed {
+  top: 0;
+}
+
+.custom .dpad .down.pressed {
+  bottom: 0;
+}
+
+.custom .dpad .left.pressed {
+  left: 0;
+}
+
+.custom .dpad .right.pressed {
+  right: 0;
+}
+
+.custom .sticks {
+  transform: scale(1.5);
+}
+
+.custom .sticks .stick {
+  width: 85px;
+  height: 83px;
+  display: block;
+  position: absolute;
+}
+
+.custom .sticks .right {
+  top: 525px;
+  left: 2655px;
+}
+
+.custom
+  .sticks
+  .right:not([style^="margin-left: -"]):not([style^="margin-left: 0"])::after {
+  content: "";
+  background-color: red;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom .sticks .left {
+  top: 635px;
+  left: 2605px;
+  background-image: var(--stick);
+}
+
+.custom .sticks .stick::before {
+  content: "";
+  display: none;
+  position: absolute;
+  background-color: black;
+  border-radius: 5rem;
+  width: 24px;
+  height: 24px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom .sticks .stick.left.pressed::before,
+.custom .sticks .stick.right.pressed::before {
+  display: block;
+}
+
+.custom .sticks .stick.left::before {
+  top: -454px;
+  left: 45px;
+}
+
+.custom .sticks .stick.right::before {
+  top: -344px;
+  left: 27px;
+}
+
+.custom .touchpad {
+  display: none;
+  height: 90px;
+  background-color: white;
+  width: 542px;
+  position: absolute;
+  left: 1270px;
+  top: 560px;
+  transform: rotate(-0.5deg);
+}
+
+.custom .touchpad.pressed {
+  display: block;
+}
+
+/*END Guitar Hero 5 Controller Styling*/
